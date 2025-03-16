@@ -33,7 +33,7 @@ rescue StandardError => e
 end
 
 #fin de la función
-
+#------------------------------------------------------------------------------
 
 
 
@@ -61,11 +61,6 @@ end
 
 #guardando el archivo para usarlo con la función
 
-
-
-
-
-
 def anadir_palabras(archivo,texto_agregar )
     begin
         File.open(archivo, "a" ) do |file|
@@ -78,24 +73,6 @@ def anadir_palabras(archivo,texto_agregar )
         puts "El problema es: #{e.message}"
     end 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #Contar oraciones
