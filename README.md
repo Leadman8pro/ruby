@@ -3,6 +3,30 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 
 ## Funciones
 
+'''ruby
+                      #Funciones Principales:
+#-------------------------------------------------------------------------------------------------------
+
+  menu() = #Esta función contiene todos los menuses que conlleva el programa. 
+  
+  main() = #Esta funcion contiene lo principal del programa. 
+
+  volver_menu() = #Esta función se utiliza para volver al menu cuando el usuario lo indique. Se contesta por un: (Si/No)
+
+                    #Procesador de Texto Automático
+#--------------------------------------------------------------------------------------------------------
+
+  procesador_texto_automatico() = #Esta función es una base para contener las demás funciones que se utilizarán para la área de procesamiento de texto automático.
+
+  contar_palabras() = #Esta función se utiliza para contar las palabras dentro del archivo cargado por el usuario.
+
+  contar_oraciones() = #Esta función se utiliza para contar las oraciones dentro del archivo cargado por el usuario.
+
+  contador_minus() = #Esta función se utiliza para contar las minúsculas dentro del archivo cargado por el usuario.
+
+  contador_num() = #Esta función se utiliza para contar la cantidad de dígitos dentro del archivo cargado por el usuario.
+'''
+
 ## Recursos Adicionales
   [Listado de Tareas](https://docs.google.com/spreadsheets/d/1xri8bSAop2sJfve_Qy83uF5apG84QR67EpnXqbuycdw/edit?usp=sharing)
 
