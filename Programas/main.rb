@@ -13,6 +13,8 @@ require_relative "menu"
 require_relative "pruebas"
 require_relative "ptautomatico"
 require_relative "ptmanual"
+require_relative "menu_reportes.rb"
+require_relative "ptreemplazo.rb"
 
                                     #Cargar Archivos
 #---------------------------------------------------------------------------------------------------------
@@ -21,8 +23,7 @@ def cargar_archivos()
     begin
       print("Ingrese el archivo que desea cargar (Sin formato txt): ")
       
-      cargar_archivo = gets.chomp
-      file = "..\\Archivos\\#{cargar_archivo}.txt"
+      file = "prueba.txt"
       
       #Condición para saber si el archivo existe o no.
       unless File.exist?(file)
@@ -45,7 +46,7 @@ end #Fin para Cargar Archivos
 #   contador_minus(file)
 #   contador_num(file)
 #   contar_vocales(file)
-  
+
                          
   
                                         #Empezamos con el main case
@@ -72,17 +73,24 @@ end #Fin para Cargar Archivos
       
           when "2" #Procesa el texto manual
             puts("\n #{" " * 8}, Procesador de texto (Manual) #{" " * 8}")
-            
+            find_text('prueba.txt')
+
+
+
+
             volver_menu()
       
           when "3" # Procesa los datos de reemplazo
             puts("\n #{" " * 8}, Procesador de reemplazos #{" " * 8}")
-            
+
+            #Ya se llamo a la función, solo quita el (#)
+
+            #replace(file)
             volver_menu()
       
           when "4" # Entran los reportes
             puts("\n #{" " * 8}, Reporte de utilización #{" " * 8}")
-            
+            reportes()
             volver_menu()
 
           when "5"

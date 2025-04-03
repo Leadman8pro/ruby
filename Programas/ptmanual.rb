@@ -1,3 +1,5 @@
+
+
 #Comienzo del contador de vocales
 #---------------------------------------------------------------------------------
 def contar_vocales(file)
@@ -9,3 +11,27 @@ def contar_vocales(file)
     puts "usted tiene de vocales #{num_vocales} y estas son #{save_vocales}"
   end
       #-------------------------------------------------------------------------------------
+
+
+
+
+                            #Función para ubicar palabras
+#---------------------------------------------------------------------------------------------------
+def find_text(file)
+
+  #Utilizo para que me diga la palabra a ubicar
+  puts "Que palabra desea ubicar: "
+  find = gets.chomp
+  parrafos = File.readlines(file) 
+
+  parrafos.each_with_index do |linea, index|
+    if linea.include?(find)
+      puts "La palabra '#{find}' se encuentra en la línea #{index + 1}: #{linea.strip}"
+    end
+  end
+end
+#---------------------------------------------------------------------------------------------------
+                            
+
+
+

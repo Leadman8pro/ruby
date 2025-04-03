@@ -27,6 +27,28 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
   contador_num() = #Esta función se utiliza para contar la cantidad de dígitos dentro del archivo cargado por el usuario.
 '''
 
+
+                              #Procesador de Texto Reemplazados
+#--------------------------------------------------------------------------------------------------------
+
+  Replace() = #Esta función esta ubicada en ptreemplazo.rb y con esta función el usuario podrá ingresare el texto que desea ubicar con lo que desea reemplazar
+
+  count_replace() = Esta función esta ubicada en  en ptreemplazo y es el encargado de decirte cuantas veces reemplazaste
+
+  crear_file() = #Esta función esta ubicada en pruebas.rb y se encarga de crear el file con para cargarlo
+
+  escribir_file() = #Esta función esta ubicada en pruebas.rb para escribir en el file y manipular la data
+'''
+
+
+
+
+
+
+
+
+
+
 ## Recursos Adicionales
   [Listado de Tareas](https://docs.google.com/spreadsheets/d/1xri8bSAop2sJfve_Qy83uF5apG84QR67EpnXqbuycdw/edit?usp=sharing)
 
