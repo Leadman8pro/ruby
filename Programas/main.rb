@@ -23,7 +23,8 @@ def cargar_archivos()
     begin
       print("Ingrese el archivo que desea cargar (Sin formato txt): ")
       
-      file = "prueba.txt"
+      cargar_archivo = gets.chomp
+      file = "..\\Archivos\\#{cargar_archivo}.txt"
       
       #Condición para saber si el archivo existe o no.
       unless File.exist?(file)
@@ -73,7 +74,8 @@ end #Fin para Cargar Archivos
       
           when "2" #Procesa el texto manual
             puts("\n #{" " * 8}, Procesador de texto (Manual) #{" " * 8}")
-            find_text('prueba.txt')
+            file = cargar_archivos()
+            find_text(file)
 
 
 
