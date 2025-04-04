@@ -45,3 +45,67 @@ def escribir_file(file)
     end
 end #Final de escribir_file
   #---------------------------------------------------------------------------
+
+
+
+
+  # Función que encapsula la lógica de reemplazo de palabras en un texto
+
+
+def reemplazar_palabra(texto, original, nueva)
+  texto.gsub(/\b#{Regexp.escape(original)}\b/, nueva)
+end
+#---------------------------------------------------------------------------------
+
+
+
+
+                              #Función para probar el reemplazo de palabras
+#---------------------------------------------------------------------------------------------------
+
+def test_replace()
+  begin # Comienzo del begin
+
+    # Crear archivo de prueba
+    test_file = "test_replace.txt"
+    File.open(test_file, "w") do |archivo|
+      archivo.puts "Hola mundo. Este mundo es verde."
+    end
+
+    # Declarar palabra a reemplazar y su reemplazo
+    original = "mundo"
+    nueva = "planeta"
+
+#Asi falla el codigo 
+    # original = "Toro"
+    # nueva = "planeta"
+
+    # Leer el archivo y aplicar el reemplazo
+    texto = File.read(test_file)
+    resultado = reemplazar_palabra(texto, original, nueva)
+    puts "\nTexto actualizado:\n#{resultado}"
+
+    # Guardar resultado en un archivo nuevo
+    File.open("resultado_reemplazo.txt", "w") { |f| f.puts resultado }
+
+    # Verifica si el reemplazo fue exitoso
+    if resultado.include?("planeta") && !resultado.include?("mundo")
+      puts "Test de replace pasó correctamente"
+    else
+      puts "Test de replace falló"
+    end
+
+    # Elimina archivos usados en la prueba
+    File.delete(test_file) if File.exist?(test_file)
+    File.delete("resultado_reemplazo.txt") if File.exist?("resultado_reemplazo.txt")
+
+  rescue => e
+    puts "Ocurrió un error durante la prueba: #{e.message}"
+  end
+
+
+end 
+#---------------------------------------------------------------------------------------------------
+
+# Ejecuta prueba automaticamente
+test_replace()
