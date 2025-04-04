@@ -42,11 +42,17 @@ def cargar_archivos()
 end #Fin para Cargar Archivos
 #---------------------------------------------------------------------------------------------------------
 
-#   crear_file(file)
-#   contar_palabras(file)
-#   contador_minus(file)
-#   contador_num(file)
-#   contar_vocales(file)
+                                  #Limpiar Pantalla
+#---------------------------------------------------------------------------------------------------------
+def limpiar_pantalla
+  if Gem.win_platform?  # Detectar si el sistema operativo es Windows
+    system('cls')
+  else  # Para Unix (Linux, macOS)
+    system('clear')
+  end #Fin de la condición
+end #Fin de la función limpiar pantalla
+#---------------------------------------------------------------------------------------------------------
+
 
                          
   
@@ -65,6 +71,7 @@ end #Fin para Cargar Archivos
           #Comienza el case
           case (opcion)
           when "1"  #Procesa datos automáticos
+            limpiar_pantalla()
             puts("\n #{" " * 8} Procesador de texto (Automático) #{" " * 8}")
             file = cargar_archivos()
             procesador_texto_automatico(file)
@@ -73,14 +80,36 @@ end #Fin para Cargar Archivos
             
       
           when "2" #Procesa el texto manual
+            limpiar_pantalla()
             puts("\n #{" " * 8}, Procesador de texto (Manual) #{" " * 8}")
+
+            ptmanual_menu()
+
+            print("¿Cuál opción deseas?: ")
+            ptopcion = gets.chomp
+
+            case (ptopcion)
+              
+            when "1" #Búsqueda Manual de Palabras
+            limpiar_pantalla()
             file = cargar_archivos()
-            find_text(file)
 
+            print("\nIngrese la palabra para buscar: ")
+            palabra =gets.chomp
 
-
-
-            volver_menu()
+            buscar_palabra(file, palabra)
+            
+            find_text(file, palabra)
+            
+            
+            when "2" #Reemplazo de vocales por otras vocales
+              limpiar_pantalla()
+              file = cargar_archivos()
+            
+            when "3" #Volver al menu
+              volver_menu()
+            end #Fin del case-when
+            
       
           when "3" # Procesa los datos de reemplazo
             puts("\n #{" " * 8}, Procesador de reemplazos #{" " * 8}")

@@ -24,3 +24,16 @@ def volver_menu()
     end #Fin de la condición
 end #Fin de la función Volver Menu
   #---------------------------------------------------------------------------------------
+
+  #Función para desplegar el menu de ptmanual
+#--------------------------------------------------------------------------------------------
+
+def ptmanual_menu()
+  puts("\n #{"=" * 20} Procesador De Texto (Manual) #{"=" * 20}")
+
+  puts("1) Búsqueda manual de palabras o frases")
+  puts("2) Reemplazo de vocales por otras vocales definidas por el usuario")
+  puts("3) Volver al menu principal")
+
+end #Fin de la función ptmanual
+#---------------------------------------------------------------------------------------------------

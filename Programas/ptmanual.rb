@@ -17,21 +17,40 @@ def contar_vocales(file)
 
                             #Función para ubicar palabras
 #---------------------------------------------------------------------------------------------------
-def find_text(file)
+def find_text(file, find)
 
-  #Utilizo para que me diga la palabra a ubicar
-  puts "Que palabra desea ubicar: "
-  find = gets.chomp
   parrafos = File.readlines(file) 
 
   parrafos.each_with_index do |linea, index|
     if linea.include?(find)
       puts "La palabra '#{find}' se encuentra en la línea #{index + 1}: #{linea.strip}"
-    end
-  end
-end
+    end #Fin del ciclo do
+  end #Fin de la condición
+end #Fin de la función find_text
 #---------------------------------------------------------------------------------------------------
                             
-
-
+#Comienzo para encontrar palabras en el archivo
+#-------------------------------------------------------------------------------------
+def buscar_palabra(file, palabra)
+  begin
+    unless File.exist?(file)
+      puts "El archivo '#{file}' no existe."
+        
+    end #Fin de la condición
+  
+    contenido = File.read(file)
+  
+    if contenido.include?(palabra)
+      puts "La palabra '#{palabra}' se encuentra en el archivo."
+       
+    else
+      puts "La palabra '#{palabra}' no se encontró en el archivo."
+        
+    end #Fin de condicion
+  rescue StandardError => e
+    puts "Error al leer el archivo: #{e.message}"
+      
+  end #Fin de manejo de excepciones
+end #Fin de la función buscar palabra
+  #----------------------------------------------------------------------------------------
 
