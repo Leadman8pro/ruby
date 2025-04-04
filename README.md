@@ -3,7 +3,7 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 
 ## Funciones
 
-'''ruby
+```ruby
                       #Funciones Principales:
 #-------------------------------------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
   crear_file() = #Esta función esta ubicada en pruebas.rb y se encarga de crear el file con para cargarlo
 
   escribir_file() = #Esta función esta ubicada en pruebas.rb para escribir en el file y manipular la data
-'''
+```
 
 
 
