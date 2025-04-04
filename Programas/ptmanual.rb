@@ -29,28 +29,10 @@ def find_text(file, find)
 end #Fin de la función find_text
 #---------------------------------------------------------------------------------------------------
                             
-#Comienzo para encontrar palabras en el archivo
-#-------------------------------------------------------------------------------------
-def buscar_palabra(file, palabra)
-  begin
-    unless File.exist?(file)
-      puts "El archivo '#{file}' no existe."
-        
-    end #Fin de la condición
-  
-    contenido = File.read(file)
-  
-    if contenido.include?(palabra)
-      puts "La palabra '#{palabra}' se encuentra en el archivo."
-       
-    else
-      puts "La palabra '#{palabra}' no se encontró en el archivo."
-        
-    end #Fin de condicion
-  rescue StandardError => e
-    puts "Error al leer el archivo: #{e.message}"
-      
-  end #Fin de manejo de excepciones
-end #Fin de la función buscar palabra
-  #----------------------------------------------------------------------------------------
 
+
+
+
+  File.open("resultado_manual.txt", "w") { |f| f.puts reemplazado }
+end
+#---------------------------------------------------------------------------------------------------
