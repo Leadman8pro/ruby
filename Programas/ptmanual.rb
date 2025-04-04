@@ -28,11 +28,45 @@ def find_text(file, find)
   end #Fin de la condición
 end #Fin de la función find_text
 #---------------------------------------------------------------------------------------------------
-                            
 
+                            #Funcion de Contar Palabras
 
+#---------------------------------------------------------------------------------------------------
 
+def contar_palabra(file)
+  # Pide al usuario la palabra que desea buscar
+  puts "¿Qué palabra deseas buscar?: "
+  palabra = gets.chomp
+
+  # Lee el contenido completo del archivo
+  texto = File.read(file)
+
+  # Usa expresiones regulares para encontrar coincidencias exactas (sin importar mayúsculas/minúsculas)
+  cantidad = texto.scan(/\b#{Regexp.escape(palabra)}\b/i).size
+  puts "La palabra '#{palabra}' aparece #{cantidad} veces en el archivo."
+end
+
+#---------------------------------------------------------------------------------------------------
+                              #Funcion de Remplazar vocales
+#---------------------------------------------------------------------------------------------------
+def reemplazar_vocales(file)
+  texto = File.read(file)
+
+  print "¿Qué vocal deseas reemplazar? (a, e, i, o, u): "
+  vocal_original = gets.chomp.downcase
+
+  print "¿Por cuál vocal deseas reemplazarla?: "
+  vocal_nueva = gets.chomp.downcase
+  # Reemplaza todas las ocurrencias de la vocal original (ignorando mayúsculas/minúsculas)
+  reemplazado = texto.gsub(/#{vocal_original}/i, vocal_nueva)
+  cantidad = texto.scan(/#{vocal_original}/i).size
+
+  puts "\nTexto modificado:\n#{reemplazado}"
+  puts "\nSe reemplazaron #{cantidad} vocales."
 
   File.open("resultado_manual.txt", "w") { |f| f.puts reemplazado }
 end
 #---------------------------------------------------------------------------------------------------
+
+
+
