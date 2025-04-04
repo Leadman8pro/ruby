@@ -13,8 +13,8 @@ require_relative "menu"
 require_relative "pruebas"
 require_relative "ptautomatico"
 require_relative "ptmanual"
-require_relative "menu_reportes.rb"
 require_relative "ptreemplazo.rb"
+require_relative "reportes"
 
                                     #Cargar Archivos
 #---------------------------------------------------------------------------------------------------------
@@ -41,7 +41,9 @@ def cargar_archivos()
   end #Fin del do loop
 end #Fin para Cargar Archivos
 #---------------------------------------------------------------------------------------------------------
-
+#Variables Globales para contar:
+$contador_ptautomatico = 0
+$contador_ptmanual = 0
                                   #Limpiar Pantalla
 #---------------------------------------------------------------------------------------------------------
 def limpiar_pantalla
@@ -53,12 +55,12 @@ def limpiar_pantalla
 end #Fin de la función limpiar pantalla
 #---------------------------------------------------------------------------------------------------------
 
-
-                         
+#---------------------------------------------------------------------------------------------------------                         
   
                                         #Empezamos con el main case
   #-------------------------------------------------------------------------------------------
   def main()
+    
     loop do
     #Comienza el begin
       begin
@@ -72,20 +74,22 @@ end #Fin de la función limpiar pantalla
           case (opcion)
           when "1"  #Procesa datos automáticos
             limpiar_pantalla()
-            puts("\n #{" " * 8} Procesador de texto (Automático) #{" " * 8}")
+            puts("\n #{"=" * 8} Procesador de texto (Automático) #{"=" * 8}")
             file = cargar_archivos()
             procesador_texto_automatico(file)
+            $contador_ptautomatico += 1
             volver_menu()
             
             
       
           when "2" #Procesa el texto manual
             limpiar_pantalla()
-            puts("\n #{" " * 8}, Procesador de texto (Manual) #{" " * 8}")
+            $contador_ptmanual += 1
+            puts("\n #{"=" * 8} Procesador de texto (Manual) #{"=" * 8}")
 
             ptmanual_menu()
 
-            print("¿Cuál opción deseas?: ")
+            print("\n¿Cuál opción deseas?: ")
             ptopcion = gets.chomp
 
             case (ptopcion)
@@ -112,7 +116,7 @@ end #Fin de la función limpiar pantalla
             
       
           when "3" # Procesa los datos de reemplazo
-            puts("\n #{" " * 8}, Procesador de reemplazos #{" " * 8}")
+            puts("\n #{"=" * 8} Procesador de reemplazos #{"=" * 8}")
 
             #Ya se llamo a la función, solo quita el (#)
 
@@ -120,8 +124,9 @@ end #Fin de la función limpiar pantalla
             volver_menu()
       
           when "4" # Entran los reportes
-            puts("\n #{" " * 8}, Reporte de utilización #{" " * 8}")
-            reportes()
+            puts("\n #{"=" * 8} Reporte de utilización #{"=" * 8}")
+            contador_ptautomatico($contador_ptautomatico)
+            contador_ptmanual($contador_ptmanual)
             volver_menu()
 
           when "5"

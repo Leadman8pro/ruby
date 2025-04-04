@@ -1,7 +1,9 @@
 #Creacion de Procesador De Texto Automatico
 #-------------------------------------------------------------------------------------------------------
 def procesador_texto_automatico(file)
+  #---------------------------------------------------------------------------
   
+  #---------------------------------------------------------------------------
       #Comienzo el contador de minuscula
   #---------------------------------------------------------------------------
   def contador_minus(file)
@@ -69,47 +71,38 @@ def procesador_texto_automatico(file)
   end #Fin de la funcion contador_num
   #-------------------------------------------------------------------------------------
 
-
-    #Comienzo de la cantidad de caracteres en el archivo
+  #Comienzo de la cantidad de caracteres en el archivo
   #-----------------------------------------------------------------------------------
 
-def total_caracteres(file)
-  texto = File.read(file)
-  total = texto.length
-  puts "Cantidad total de caracteres: #{total}"
-  return total
-end #Fin de la funcion total_caracteres
+  def total_caracteres(file)
+    texto = File.read(file)
+    total = texto.length
+    puts "Cantidad total de caracteres: #{total}"
+    return total
+  end #Fin de la funcion total_caracteres
 #-------------------------------------------------------------------------------------
-
 
     #Comienzo de cantidad de caracteres sin espacios ni simbolos especiales 
-  #-----------------------------------------------------------------------------------
-
-
-def caracteres_sin_espacios_y_simbolos(file)
-  texto = File.read(file)
-  solo_validos = texto.gsub(/[^A-Za-z0-9]/, '')
-  puts "Cantidad de caracteres sin espacios ni símbolos especiales: #{solo_validos.length}"
-  return solo_validos.length
-end
-
-#Fin de la funcion caracteres_sin_espacios_y_simbolos
+#-----------------------------------------------------------------------------------
+  def caracteres_sin_espacios_y_simbolos(file)
+    texto = File.read(file)
+    solo_validos = texto.gsub(/[^A-Za-z0-9]/, '')
+    puts "Cantidad de caracteres sin espacios ni símbolos especiales: #{solo_validos.length}"
+    return solo_validos.length
+  end#Fin de la funcion caracteres_sin_espacios_y_simbolos
 #-------------------------------------------------------------------------------------
 
-  #Comienzo de cantidad de palabras en mayuscula 
-   #-----------------------------------------------------------------------------------
-
-def palabras_con_mayuscula(file)
+#Comienzo de cantidad de palabras en mayuscula 
+#-----------------------------------------------------------------------------------
+  def palabras_con_mayuscula(file)
   texto = File.read(file)
   mayus = texto.scan(/\b[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+\b/).size
   puts "Cantidad de palabras que comienzan con mayúscula: #{mayus}"
   return mayus
-end 
-
-# Fin de la funcion de palabras_con_mayuscula
-
-
-  contadores = contador_minus(file) + contar_palabras(file) + contar_oraciones(file) + contador_num(file)
+  end # Fin de la funcion de palabras_con_mayuscula
+#-------------------------------------------------------------------------------------
+ 
+  contadores = contador_minus(file) + contar_palabras(file) + contar_oraciones(file) + contador_num(file) + total_caracteres(file) + caracteres_sin_espacios_y_simbolos(file) + palabras_con_mayuscula(file)
   return contadores
-  end #Final de Procesador_Texto_Automatico
-  #-------------------------------------------------------------------------------------------------------------------------
+end #Final de Procesador_Texto_Automatico
+#-------------------------------------------------------------------------------------------------------------------------
