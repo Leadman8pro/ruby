@@ -106,6 +106,3 @@ def test_replace()
 
 end 
 #---------------------------------------------------------------------------------------------------
-
-# Ejecuta prueba automaticamente
-test_replace()

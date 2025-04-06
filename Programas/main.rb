@@ -101,7 +101,6 @@ end #Fin de la función limpiar pantalla
             print("\nIngrese la palabra para buscar: ")
             palabra =gets.chomp
 
-            buscar_palabra(file, palabra)
             
             find_text(file, palabra)
             
@@ -110,18 +109,28 @@ end #Fin de la función limpiar pantalla
               limpiar_pantalla()
               file = cargar_archivos()
             
+            
             when "3" #Volver al menu
               volver_menu()
             end #Fin del case-when
+            #-------------------------------------------------------------------------------
+
             
       
           when "3" # Procesa los datos de reemplazo
             puts("\n #{"=" * 8} Procesador de reemplazos #{"=" * 8}")
+            
 
-            #Ya se llamo a la función, solo quita el (#)
-
-            #replace(file)
+            #Contador comenzando en 0
+            contador = 0
+            #llamo a la función de cargar archivo
+            file = cargar_archivos()
+            contador = replace(file , contador)
+            count_replace(contador)
             volver_menu()
+
+            #-------------------------------------------------------------------------------
+
       
           when "4" # Entran los reportes
             puts("\n #{"=" * 8} Reporte de utilización #{"=" * 8}")
