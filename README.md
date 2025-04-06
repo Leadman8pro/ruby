@@ -25,6 +25,35 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
   contador_minus() = #Esta función se utiliza para contar las minúsculas dentro del archivo cargado por el usuario.
 
   contador_num() = #Esta función se utiliza para contar la cantidad de dígitos dentro del archivo cargado por el usuario.
+
+  
+
+                          #Procesador de Texto Manual
+#--------------------------------------------------------------------------------------------------------
+
+  ptmanual_menu() = #Esta función despliega el menú con las opciones del módulo Manual: búsqueda, reemplazo o regresar al menú principal.
+
+  find_text() = #Esta función permite buscar una palabra o frase ingresada por el usuario dentro del archivo. Muestra las líneas donde aparece.
+
+  contar_palabra() = #Esta función le permite al usuario ingresar una palabra, y le dice cuántas veces aparece en el archivo.
+
+  contar_vocales() = #Esta función escanea el texto y cuenta cuántas vocales (mayúsculas y minúsculas) aparecen en total.
+
+  reemplazar_vocales() = #Esta función permite al usuario elegir una vocal para reemplazarla por otra, aplicando los cambios en todo el texto y mostrando el nuevo contenido.
+
+
+                          #Reporte de Utilización
+#--------------------------------------------------------------------------------------------------------
+
+  contador_ptautomatico(cantidad) = #Esta función muestra la cantidad de veces que se utilizó el Procesador de Texto Automático.
+
+  contador_ptmanual(cantidad) = #Esta función muestra la cantidad de veces que se utilizó el Procesador de Texto Manual.
+
+  contador_ptreemplazo(cantidad) = #Esta función muestra cuántas veces se utilizó el Procesador de Reemplazos.
+
+  caracteres_buscados_total(cantidad) = #Esta función muestra el total acumulado de caracteres buscados o reemplazados durante el uso del programa.
+
+
 '''
 
 
@@ -39,6 +68,7 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 
   escribir_file() = #Esta función esta ubicada en pruebas.rb para escribir en el file y manipular la data
 ```
+
 
 
 
