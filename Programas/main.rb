@@ -44,6 +44,8 @@ end #Fin para Cargar Archivos
 #Variables Globales para contar:
 $contador_ptautomatico = 0
 $contador_ptmanual = 0
+$contador_ptreemplazo = 0
+$total_caracteres_buscados = 0
                                   #Limpiar Pantalla
 #---------------------------------------------------------------------------------------------------------
 def limpiar_pantalla
@@ -120,13 +122,11 @@ end #Fin de la función limpiar pantalla
           when "3" # Procesa los datos de reemplazo
             puts("\n #{"=" * 8} Procesador de reemplazos #{"=" * 8}")
             
-
-            #Contador comenzando en 0
-            contador = 0
+            $contador_ptreemplazo += 1
+      
             #llamo a la función de cargar archivo
             file = cargar_archivos()
-            contador = replace(file , contador)
-            count_replace(contador)
+            replace(file)
             volver_menu()
 
             #-------------------------------------------------------------------------------
@@ -136,6 +136,8 @@ end #Fin de la función limpiar pantalla
             puts("\n #{"=" * 8} Reporte de utilización #{"=" * 8}")
             contador_ptautomatico($contador_ptautomatico)
             contador_ptmanual($contador_ptmanual)
+            contador_ptreemplazo($contador_ptreemplazo)
+            caracteres_buscados_total($total_caracteres_buscados)
             volver_menu()
 
           when "5"
