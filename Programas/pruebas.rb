@@ -64,24 +64,19 @@ end
 #---------------------------------------------------------------------------------------------------
 
 def test_replace()
-  begin # Comienzo del begin
-
+  begin
     # Crear archivo de prueba
     file = "..\\Archivos\\prueba.txt"
-     # Asegúrate de que el archivo exista
-     unless File.exist?(file)
+    unless File.exist?(file)
       puts "El archivo de prueba no existe."
       return
-
     end
 
-    # Declarar palabra a reemplazar y su reemplazo
-    original = "mundo"
-    nueva = "planeta"
-
-#Asi falla el codigo 
-    # original = "Toro"
-    # nueva = "planeta"
+    # Solicitar la palabra original y su reemplazo al usuario
+    puts "Escribe la palabra que deseas reemplazar:"
+    original = gets.chomp
+    puts "Escribe la nueva palabra que sustituirá a la anterior:"
+    nueva = gets.chomp
 
     # Leer el archivo y aplicar el reemplazo
     texto = File.read(file)
@@ -89,24 +84,18 @@ def test_replace()
     puts "\nTexto actualizado:\n#{resultado}"
 
     # Guardar resultado en un archivo nuevo
-    File.open("resultado_reemplazo.txt", "w") { |f| f.puts resultado }
+    File.open(file, "w") { |f| f.puts resultado }
 
-    # Verifica si el reemplazo fue exitoso
-    if resultado.include?("planeta") && !resultado.include?("mundo")
+    # Verificar si el reemplazo fue exitoso
+    if resultado.include?(nueva) && !resultado.include?(original)
       puts "Test de replace pasó correctamente"
     else
       puts "Test de replace falló"
     end
 
-    # Elimina archivos usados en la prueba
-    File.delete("resultado_reemplazo.txt") if File.exist?("resultado_reemplazo.txt")
-
+    # Eliminar archivos usados en la prueba
   rescue => e
     puts "Ocurrió un error durante la prueba: #{e.message}"
   end
-
-
-end 
-
-test_replace()
+end
 #---------------------------------------------------------------------------------------------------

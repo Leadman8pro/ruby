@@ -110,6 +110,7 @@ end #Fin de la función limpiar pantalla
             when "2" #Reemplazo de vocales por otras vocales
               limpiar_pantalla()
               file = cargar_archivos()
+              test_replace()
 
             when "3" # Ejecutar test_replace
               limpiar_pantalla()
@@ -127,13 +128,18 @@ end #Fin de la función limpiar pantalla
           when "3" # Procesa los datos de reemplazo
             puts("\n #{"=" * 8} Procesador de reemplazos #{"=" * 8}")
             
-            $contador_ptreemplazo += 1
+            contador = 0
+            
       
             #llamo a la función de cargar archivo
             file = cargar_archivos()
-            replace(file)
+            contador = replace(file, contador)
+            count_replace(contador)
+            $contador_ptreemplazo +=1
+
             volver_menu()
 
+            
             #-------------------------------------------------------------------------------
 
       
