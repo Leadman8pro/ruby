@@ -110,9 +110,14 @@ end #Fin de la función limpiar pantalla
             when "2" #Reemplazo de vocales por otras vocales
               limpiar_pantalla()
               file = cargar_archivos()
+
+            when "3" # Ejecutar test_replace
+              limpiar_pantalla()
+              test_replace() 
+              volver_menu()
             
             
-            when "3" #Volver al menu
+            when "4" #Volver al menu
               volver_menu()
             end #Fin del case-when
             #-------------------------------------------------------------------------------

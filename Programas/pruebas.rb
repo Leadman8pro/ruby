@@ -67,9 +67,12 @@ def test_replace()
   begin # Comienzo del begin
 
     # Crear archivo de prueba
-    test_file = "test_replace.txt"
-    File.open(test_file, "w") do |archivo|
-      archivo.puts "Hola mundo. Este mundo es verde."
+    file = "..\\Archivos\\prueba.txt"
+     # Asegúrate de que el archivo exista
+     unless File.exist?(file)
+      puts "El archivo de prueba no existe."
+      return
+
     end
 
     # Declarar palabra a reemplazar y su reemplazo
@@ -81,7 +84,7 @@ def test_replace()
     # nueva = "planeta"
 
     # Leer el archivo y aplicar el reemplazo
-    texto = File.read(test_file)
+    texto = File.read(file)
     resultado = reemplazar_palabra(texto, original, nueva)
     puts "\nTexto actualizado:\n#{resultado}"
 
@@ -96,7 +99,6 @@ def test_replace()
     end
 
     # Elimina archivos usados en la prueba
-    File.delete(test_file) if File.exist?(test_file)
     File.delete("resultado_reemplazo.txt") if File.exist?("resultado_reemplazo.txt")
 
   rescue => e
