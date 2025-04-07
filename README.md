@@ -41,7 +41,7 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 
   reemplazar_vocales() = #Esta función permite al usuario elegir una vocal para reemplazarla por otra, aplicando los cambios en todo el texto y mostrando el nuevo contenido.
 
- #Procesador de Texto Reemplazados
+                           #Procesador de Texto Reemplazados
 #--------------------------------------------------------------------------------------------------------
 
   replace() = #Esta función esta ubicada en ptreemplazo.rb y con esta función el usuario podrá ingresare el texto que desea ubicar con lo que desea reemplazar
@@ -63,7 +63,7 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 
   caracteres_buscados_total(cantidad) = #Esta función muestra el total acumulado de caracteres buscados o reemplazados durante el uso del programa.
 
-
+```
 
 ## Recursos Adicionales
   [Listado de Tareas](https://docs.google.com/spreadsheets/d/1xri8bSAop2sJfve_Qy83uF5apG84QR67EpnXqbuycdw/edit?usp=sharing)
@@ -73,5 +73,7 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 ## Desarrolladores
 
 Christian Matias
+
 Carlos Sanchez
+
 Joel Maisonet
