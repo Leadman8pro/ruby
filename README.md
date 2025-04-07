@@ -41,6 +41,16 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 
   reemplazar_vocales() = #Esta función permite al usuario elegir una vocal para reemplazarla por otra, aplicando los cambios en todo el texto y mostrando el nuevo contenido.
 
+ #Procesador de Texto Reemplazados
+#--------------------------------------------------------------------------------------------------------
+
+  replace() = #Esta función esta ubicada en ptreemplazo.rb y con esta función el usuario podrá ingresare el texto que desea ubicar con lo que desea reemplazar
+
+  count_replace() = #Esta función esta ubicada en  en ptreemplazo y es el encargado de decirte cuantas veces reemplazaste
+
+  crear_file() = #Esta función esta ubicada en pruebas.rb y se encarga de crear el file con para cargarlo
+
+  escribir_file() = #Esta función esta ubicada en pruebas.rb para escribir en el file y manipular la data
 
                           #Reporte de Utilización
 #--------------------------------------------------------------------------------------------------------
@@ -54,33 +64,11 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
   caracteres_buscados_total(cantidad) = #Esta función muestra el total acumulado de caracteres buscados o reemplazados durante el uso del programa.
 
 
-'''
-
-
-                              #Procesador de Texto Reemplazados
-#--------------------------------------------------------------------------------------------------------
-
-  Replace() = #Esta función esta ubicada en ptreemplazo.rb y con esta función el usuario podrá ingresare el texto que desea ubicar con lo que desea reemplazar
-
-  count_replace() = Esta función esta ubicada en  en ptreemplazo y es el encargado de decirte cuantas veces reemplazaste
-
-  crear_file() = #Esta función esta ubicada en pruebas.rb y se encarga de crear el file con para cargarlo
-
-  escribir_file() = #Esta función esta ubicada en pruebas.rb para escribir en el file y manipular la data
-```
-
-
-
-
-
-
-
-
-
-
 
 ## Recursos Adicionales
   [Listado de Tareas](https://docs.google.com/spreadsheets/d/1xri8bSAop2sJfve_Qy83uF5apG84QR67EpnXqbuycdw/edit?usp=sharing)
+
+  [Descarga de Presentacion (PowerPoint)](https://drive.google.com/uc?export=download&id=1nvq89cm6ykNHOzKZclEvqI3ppY2PwFe5)
 
 ## Desarrolladores
 

@@ -86,7 +86,6 @@ end #Fin de la función limpiar pantalla
       
           when "2" #Procesa el texto manual
             limpiar_pantalla()
-            $contador_ptmanual += 1
             puts("\n #{"=" * 8} Procesador de texto (Manual) #{"=" * 8}")
 
             ptmanual_menu()
@@ -105,22 +104,23 @@ end #Fin de la función limpiar pantalla
 
             
             find_text(file, palabra)
-            
+            $contador_ptmanual += 1
             
             when "2" #Reemplazo de vocales por otras vocales
               limpiar_pantalla()
               file = cargar_archivos()
-              test_replace()
+              reemplazar_vocales(file)
+              $contador_ptmanual += 1
 
-            when "3" # Ejecutar test_replace
-              limpiar_pantalla()
-              test_replace() 
-              volver_menu()
+            when "3" #Volver al menu
+              next
             
-            
-            when "4" #Volver al menu
-              volver_menu()
+            else
+              puts("Ingresaste un dato no válido.")
+
             end #Fin del case-when
+
+
             #-------------------------------------------------------------------------------
 
             
@@ -153,6 +153,9 @@ end #Fin de la función limpiar pantalla
 
           when "5"
             puts("Salir del programa...")
+
+            #Código para dar finalizado el programa
+            exit()
             break
           else
             raise ArgumentError

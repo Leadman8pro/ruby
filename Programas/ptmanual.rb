@@ -64,7 +64,7 @@ def reemplazar_vocales(file)
   puts "\nTexto modificado:\n#{reemplazado}"
   puts "\nSe reemplazaron #{cantidad} vocales."
 
-  File.open("resultado_manual.txt", "w") { |f| f.puts reemplazado }
+  File.open(file, "w") { |f| f.puts reemplazado }
 end
 #---------------------------------------------------------------------------------------------------
 
