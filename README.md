@@ -9,7 +9,9 @@ Este proyecto tiene como objetivo desarrollar un sistema en Ruby para la búsque
 
   menu() = #Esta función contiene todos los menuses que conlleva el programa. 
   
-  main() = #Esta funcion contiene lo principal del programa. 
+  main() = #Esta funcion contiene lo principal del programa.
+
+  limpiar_pantalla() = #Esta función realiza un limpiado de terminal automático dependiendo del sistema operativo.
 
   volver_menu() = #Esta función se utiliza para volver al menu cuando el usuario lo indique. Se contesta por un: (Si/No)
 
