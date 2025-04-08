@@ -46,6 +46,7 @@ $contador_ptautomatico = 0
 $contador_ptmanual = 0
 $contador_ptreemplazo = 0
 $total_caracteres_buscados = 0
+
                                   #Limpiar Pantalla
 #---------------------------------------------------------------------------------------------------------
 def limpiar_pantalla
@@ -61,6 +62,8 @@ end #Fin de la función limpiar pantalla
   
                                         #Empezamos con el main case
   #-------------------------------------------------------------------------------------------
+
+
   def main()
     
     loop do
@@ -105,6 +108,7 @@ end #Fin de la función limpiar pantalla
             
             find_text(file, palabra)
             $contador_ptmanual += 1
+            $total_caracteres_buscados += 1
             
             when "2" #Reemplazo de vocales por otras vocales
               limpiar_pantalla()
